@@ -63,7 +63,9 @@ func Build() error {
 		gopath = build.Default.GOPATH
 	}
 
-	return run(fmt.Sprintf("go build -a -o %s/bin/sip ./cmd/livekit-sip", gopath))
+	cmd := fmt.Sprintf("go build -a -o %s/bin/sip ./cmd/livekit-sip", gopath)
+	fmt.Println("running", cmd)
+	return run(cmd)
 }
 
 func Test() error {
